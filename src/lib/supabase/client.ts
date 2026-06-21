@@ -3,7 +3,17 @@ import { createBrowserClient } from '@supabase/ssr'
 export function createClient() {
   const client = createBrowserClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookieOptions: {
+        domain: typeof window !== 'undefined' && window.location.hostname.includes('invozeno.com')
+          ? '.invozeno.com'
+          : undefined,
+        path: '/',
+        sameSite: 'lax',
+        secure: true
+      }
+    }
   )
 
   // Wrap getUser to support client-side impersonation checks

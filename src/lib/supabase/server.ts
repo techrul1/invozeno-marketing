@@ -1,8 +1,19 @@
 import { createServerClient } from '@supabase/ssr'
-import { cookies } from 'next/headers'
+import { cookies, headers } from 'next/headers'
+
+async function getCookieDomain() {
+  try {
+    const headersList = await headers()
+    const host = headersList.get('host') || ''
+    return host.includes('invozeno.com') ? '.invozeno.com' : undefined
+  } catch {
+    return undefined
+  }
+}
 
 export async function createOriginalClient() {
   const cookieStore = await cookies()
+  const cookieDomain = await getCookieDomain()
 
   return createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -14,20 +25,23 @@ export async function createOriginalClient() {
         },
         setAll(cookiesToSet) {
           try {
-            cookiesToSet.forEach(({ name, value, options }) =>
-              cookieStore.set(name, value, options)
-            )
+            cookiesToSet.forEach(({ name, value, options }) => {
+              const finalOptions = cookieDomain ? { ...options, domain: cookieDomain } : options
+              cookieStore.set(name, value, finalOptions)
+            })
           } catch {
             // Ignore
           }
         },
       },
+      cookieOptions: cookieDomain ? { domain: cookieDomain } : undefined
     }
   )
 }
 
 export async function createClient() {
   const cookieStore = await cookies()
+  const cookieDomain = await getCookieDomain()
 
   const client = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -39,15 +53,17 @@ export async function createClient() {
         },
         setAll(cookiesToSet) {
           try {
-            cookiesToSet.forEach(({ name, value, options }) =>
-              cookieStore.set(name, value, options)
-            )
+            cookiesToSet.forEach(({ name, value, options }) => {
+              const finalOptions = cookieDomain ? { ...options, domain: cookieDomain } : options
+              cookieStore.set(name, value, finalOptions)
+            })
           } catch {
             // The `setAll` method was called from a Server Component.
             // This can be ignored if you have middleware refreshing user sessions.
           }
         },
       },
+      cookieOptions: cookieDomain ? { domain: cookieDomain } : undefined
     }
   )
 
