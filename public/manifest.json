@@ -1,0 +1,17 @@
+{
+  "name": "Invozeno Invoicing",
+  "short_name": "Invozeno",
+  "description": "Modern Invoicing & Billing Software for Freelancers and Businesses.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4f46e5",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
