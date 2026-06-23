@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 
 const WORDS = [
-  "Modern Teams",
+  "Modern Merchants",
   "Freelancers",
   "Agencies",
   "Startups",

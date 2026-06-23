@@ -12,12 +12,12 @@ const STEPS = [
   {
     icon: Palette,
     title: "Stylize & Brand",
-    description: "Upload your logo, choose your brand colors, customize your invoice templates, and connect your client portal."
+    description: "Upload your logo/custom cover banners, choose brand colors, customize templates, and set up your public catalog storefront."
   },
   {
     icon: Send,
     title: "Start Billing",
-    description: "Create professional invoices, quotations, and receipts. Send them instantly and collect payments through Flutterwave."
+    description: "Accept quote requests from your storefront, send professional invoices/receipts, and collect global client payments."
   }
 ]
 

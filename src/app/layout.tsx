@@ -22,9 +22,9 @@ const geistMono = Geist_Mono({
 
 export async function generateMetadata(): Promise<Metadata> {
   let seo: any = {
-    siteTitle: "Invozeno - Modern Invoicing & Billing Software",
-    siteDescription: "Create professional invoices, send quotations, and manage payments effortlessly with Invozeno. The ultimate billing solution for freelancers and businesses.",
-    keywords: "invoice generator, online billing software, receipt maker, quotation software, small business invoicing",
+    siteTitle: "Invozeno - Modern Invoicing, Billing & Storefronts",
+    siteDescription: "Create professional invoices, send quotations, manage storefront catalogs, and collect client payments effortlessly. The ultimate billing and invoicing solution for freelancers and businesses.",
+    keywords: "invoice generator, online billing software, receipt maker, quotation software, storefront catalog, quote request cart, invoicing software, small business billing",
     ogImage: "/logo.png"
   };
 

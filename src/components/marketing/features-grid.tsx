@@ -1,22 +1,24 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Palette, FileText, Send, CheckCircle, CreditCard, Users, Repeat, QrCode, Coins, Bell, Calculator, Shield, DollarSign } from "lucide-react"
+import { Palette, FileText, Send, CheckCircle, CreditCard, Users, Repeat, QrCode, Coins, Bell, Calculator, Shield, DollarSign, Store, MessageCircle, ShieldCheck, Globe } from "lucide-react"
 
 const FEATURES = [
-  { icon: Palette, title: "Custom Branding", desc: "Upload your logo, choose custom font styling, and configure matching color palettes." },
+  { icon: Store, title: "Public Storefronts", desc: "Launch your own public business profile complete with custom cover banner branding and service catalogs." },
+  { icon: MessageCircle, title: "WhatsApp Checkout", desc: "Configure custom WhatsApp messages and let customers request quotes or place orders directly to your chat." },
+  { icon: Palette, title: "Custom Branding", desc: "Upload your logo, signature, and payment stamp, and configure custom matching color palettes." },
   { icon: FileText, title: "Invoice Templates", desc: "Choose from multiple professionally designed layout templates (Classic, Modern, Minimal, Agency)." },
-  { icon: Send, title: "Quotations", desc: "Create, send, and track quotations. Convert them into invoices with a single click." },
+  { icon: Send, title: "Quotations & Carts", desc: "Let customers build service carts from your storefront, send quote requests, and convert them to invoices with one click." },
+  { icon: ShieldCheck, title: "Verified Payouts", desc: "Secure payout settlements with automated bank lookup name verification checks against business profiles." },
+  { icon: Globe, title: "Multi-Currency Store", desc: "Set default storefront currencies, and collect local or global customer payments via Flutterwave or PayPal." },
   { icon: CheckCircle, title: "Receipts", desc: "Automatically generate and send payment receipts when an invoice is marked as paid." },
   { icon: CreditCard, title: "Flutterwave Payments", desc: "Accept card payments, USSD, and bank transfers with our seamless integration." },
   { icon: DollarSign, title: "Direct PayPal Billing", desc: "Link your PayPal account to receive client payments directly with automated IPN transaction verification." },
   { icon: Users, title: "Team Collaboration", desc: "Add team members to your workspace with role-based access control (Owner, Admin, Member, Viewer)." },
   { icon: Repeat, title: "Recurring Retainers", desc: "Set up automatic recurring invoice generation and dispatch for contract retainer clients." },
-  { icon: QrCode, title: "QR Code Payments", desc: "PDF invoices include scan-to-pay QR codes, allowing clients to scan and settle bills on their mobile phones." },
   { icon: Coins, title: "Partial Payments", desc: "Enable clients to make partial payments against their invoices, with automatic tracking of the remaining balance due." },
   { icon: Bell, title: "Automated Reminders", desc: "Automate follow-ups with automated payment notifications before and after invoice due dates." },
-  { icon: Calculator, title: "Multi-Tax & WHT Support", desc: "Apply multiple custom tax rates (VAT) and calculate Withholding Tax (WHT) deductions automatically." },
-  { icon: Shield, title: "White Label", desc: "Remove all Invozeno branding and provide a 100% white-labeled experience to your clients." }
+  { icon: Calculator, title: "Multi-Tax & WHT Support", desc: "Apply multiple custom tax rates (VAT) and calculate Withholding Tax (WHT) deductions automatically." }
 ]
 
 export function FeaturesGrid({ data }: { data?: any }) {

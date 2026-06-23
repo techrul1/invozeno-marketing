@@ -11,11 +11,14 @@ export default function FeaturesPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {[
           { title: "Smart Invoicing", description: "Create and send professional invoices in seconds. Get notified when they are viewed and paid." },
-          { title: "Quotation Management", description: "Convert estimates into beautiful quotes. Your clients can approve them online with one click." },
-          { title: "Automated Receipts", description: "Save time with automated receipt generation and delivery upon successful payment." },
-          { title: "Multi-Currency Support", description: "Bill your global clients in their local currency without any hassle." },
-          { title: "Client Portal", description: "Give your clients a dedicated portal to view their billing history and outstanding invoices." },
-          { title: "Real-time Analytics", description: "Gain insights into your revenue, outstanding payments, and overall financial health." },
+          { title: "Public Storefronts", description: "Launch your own public business storefront with custom banner styling and customizable service catalogs." },
+          { title: "WhatsApp Checkout", description: "Configure pre-filled custom WhatsApp messages so clients can checkout catalog carts directly to your chat." },
+          { title: "Quotation Carts", description: "Enable clients to build service carts from your catalog, submit quote requests, and approve quotes online." },
+          { title: "Verified Payouts", description: "Secure payout settlements with automated Flutterwave bank lookup checking business registration match." },
+          { title: "Automated Receipts", description: "Save time with automated branded receipt generation and delivery upon successful invoice payment." },
+          { title: "Multi-Currency Support", description: "Configure default storefront currencies and bill global clients in their local currency without hassle." },
+          { title: "Client Billing Portal", description: "Provide clients a white-labeled dashboard to view invoices, estimate quotes, and make partial payments." },
+          { title: "Business Analytics", description: "Gain insights into storefront views, quotation conversion rates, payout balances, and overall financial health." },
         ].map((feature, i) => (
           <Card key={i} className="hover:shadow-md transition-shadow border-border/50">
             <CardHeader>
