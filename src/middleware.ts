@@ -10,7 +10,9 @@ export function middleware(request: NextRequest) {
     pathname.startsWith('/receipt/') ||
     pathname.startsWith('/dashboard/') || pathname === '/dashboard' ||
     pathname.startsWith('/admin/') || pathname === '/admin' ||
-    pathname.startsWith('/auth/') || pathname === '/auth'
+    pathname.startsWith('/auth/') || pathname === '/auth' ||
+    pathname.startsWith('/business/') ||
+    pathname.startsWith('/pay/')
 
   if (shouldRedirect) {
     return NextResponse.redirect(new URL(`https://app.invozeno.com${pathname}${url.search}`, request.url))
@@ -27,5 +29,7 @@ export const config = {
     '/dashboard/:path*',
     '/admin/:path*',
     '/auth/:path*',
+    '/business/:path*',
+    '/pay/:path*',
   ],
 }
