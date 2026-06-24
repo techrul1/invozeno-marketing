@@ -12,7 +12,8 @@ export function middleware(request: NextRequest) {
     pathname.startsWith('/admin/') || pathname === '/admin' ||
     pathname.startsWith('/auth/') || pathname === '/auth' ||
     pathname.startsWith('/business/') ||
-    pathname.startsWith('/pay/')
+    pathname.startsWith('/pay/') ||
+    pathname.startsWith('/@')
 
   if (shouldRedirect) {
     return NextResponse.redirect(new URL(`https://app.invozeno.com${pathname}${url.search}`, request.url))
@@ -31,5 +32,6 @@ export const config = {
     '/auth/:path*',
     '/business/:path*',
     '/pay/:path*',
+    '/@:path*',
   ],
 }
