@@ -24,14 +24,6 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    '/invoice/:path*',
-    '/quotation/:path*',
-    '/receipt/:path*',
-    '/dashboard/:path*',
-    '/admin/:path*',
-    '/auth/:path*',
-    '/business/:path*',
-    '/pay/:path*',
-    '/@:path*',
+    '/((?!api|_next/static|_next/image|favicon.ico).*)',
   ],
 }
